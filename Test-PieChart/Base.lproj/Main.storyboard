@@ -18,23 +18,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ta9-Pz-O5d" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="10" y="333.5" width="394" height="239"/>
+                                <rect key="frame" x="10" y="74" width="394" height="239"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="239" id="hVe-5J-P3L"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gym-ip-ONh">
+                                <rect key="frame" x="112" y="344.5" width="190" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="NoN-dc-jDF"/>
+                                    <constraint firstAttribute="height" constant="100" id="Rak-Ew-1fM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Td-sx-zv5">
+                                <rect key="frame" x="87" y="452.5" width="240" height="1"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="9VV-AA-YUe"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ta9-Pz-O5d" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="BdE-rk-Svw"/>
+                            <constraint firstItem="2Td-sx-zv5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="Ps8-Uu-Xn2"/>
+                            <constraint firstItem="ta9-Pz-O5d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="SdS-3D-cme"/>
+                            <constraint firstItem="2Td-sx-zv5" firstAttribute="top" secondItem="gym-ip-ONh" secondAttribute="bottom" constant="8" symbolic="YES" id="Wk4-Bv-lso"/>
+                            <constraint firstItem="gym-ip-ONh" firstAttribute="centerX" secondItem="ta9-Pz-O5d" secondAttribute="centerX" id="XXb-SQ-706"/>
+                            <constraint firstItem="gym-ip-ONh" firstAttribute="top" secondItem="ta9-Pz-O5d" secondAttribute="bottom" constant="31.5" id="bIK-6Z-Ws7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Td-sx-zv5" secondAttribute="trailing" constant="87" id="bSI-Ok-gFh"/>
                             <constraint firstItem="ta9-Pz-O5d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="cdx-wm-yAq"/>
                             <constraint firstItem="ta9-Pz-O5d" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wvX-u8-6h1"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="button" destination="gym-ip-ONh" id="dlD-Om-CeM"/>
                         <outlet property="chartView" destination="ta9-Pz-O5d" id="yjf-2z-5BH"/>
+                        <outlet property="lineView" destination="2Td-sx-zv5" id="MtO-OK-Eka"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

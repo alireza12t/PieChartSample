@@ -10,11 +10,15 @@ import Charts
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var button: UIButton!
     @IBOutlet weak var chartView: PieChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupChart()
+        button.drawGradient(colors: [.blue, .systemPink], cornerRadius: 6)
+        lineView.drawGradient(colors: [.white, .systemGray, .white], isVertical: false)
     }
     
     func setupChart() {
@@ -42,3 +46,20 @@ class ViewController: UIViewController {
     }
 }
 
+extension UIView {
+    func drawGradient(colors: [UIColor], cornerRadius: CGFloat = 0, isVertical: Bool = true) {
+        // Apply Gradient Color
+        let gradientLayer:CAGradientLayer = CAGradientLayer()
+        gradientLayer.frame.size = self.frame.size
+        gradientLayer.colors =
+        colors.compactMap({$0.cgColor})
+        gradientLayer.cornerRadius = cornerRadius
+        self.layer.cornerRadius = cornerRadius
+        if !isVertical {
+            gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
+            gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        }
+        //Use diffrent colors
+        self.layer.addSublayer(gradientLayer)
+    }
+}
